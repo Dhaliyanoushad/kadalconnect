@@ -18,15 +18,60 @@ const AboutSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          From Dream to Reality
-        </h2>
-        <p className="text-gray-700 max-w-2xl mx-auto">
-          Experience coastal living through community-driven traditions,
-          verified homes, and rooted livelihoods.
-        </p>
-      </div>
+     <div className="relative max-w-7xl mx-auto px-6 py-20">
+
+  {/* About Text */}
+  <div className="text-center mb-14">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      About KadalConnect
+    </h2>
+    <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+      KadalConnect connects travelers with authentic coastal life while helping
+      local communities earn through their everyday traditions — without
+      turning villages into commercial resorts.
+    </p>
+  </div>
+
+  {/* Cards */}
+  <div className="grid gap-8 md:grid-cols-3">
+
+    {/* Card 1 */}
+    <div className="bg-white/70 backdrop-blur-md p-6 rounded-xl shadow-sm hover:shadow-md transition">
+      <h3 className="text-xl font-semibold mb-3">
+        Authentic Experiences
+      </h3>
+      <p className="text-gray-600">
+        Discover fishing practices, coastal cooking, crafts, and traditions
+        hosted directly by local communities.
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-white/70 backdrop-blur-md p-6 rounded-xl shadow-sm hover:shadow-md transition">
+      <h3 className="text-xl font-semibold mb-3">
+        Community Verified Homes
+      </h3>
+      <p className="text-gray-600">
+        Stay in homes approved by the community and ranked using a Tradition
+        Score based on real guest feedback.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="bg-white/70 backdrop-blur-md p-6 rounded-xl shadow-sm hover:shadow-md transition">
+      <h3 className="text-xl font-semibold mb-3">
+        Rooted Coastal Economy
+      </h3>
+      <p className="text-gray-600">
+        Support local livelihoods through live fish auctions and access to
+        traditional coastal products.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
 
     </section>
   );
