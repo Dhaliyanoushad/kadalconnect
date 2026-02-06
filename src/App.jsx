@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Hero from "./components/hero";
 import AboutSection from "./components/AboutSection";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
-import ChatWidget from "./components/ChatWidget";
 
 import Marketplace from "./pages/Marketplace";
 import Chatbot from "./pages/Chatbot";
@@ -36,7 +35,6 @@ function App() {
       </Routes>
 
       <Footer />
-      <ChatWidget />
     </BrowserRouter>
   );
 }
