@@ -1,0 +1,99 @@
+/* src/App.css */
+
+/* --- 1. FONTS --- */
+/* 'Playfair Display' for elegant headings (Heritage feel) */
+/* 'Inter' or 'Outfit' for clean UI text */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  --deep-sea: #0f172a;
+  --shallow-teal: #0891b2;
+  --sand-gold: #f59e0b;
+  --foam-white: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- 2. GLOBAL DEFAULTS --- */
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--deep-sea);
+  color: var(--foam-white);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3, .serif-font {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
+}
+
+/* --- 3. CUSTOM SCROLLBAR (Deep Sea Themed) --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1e293b 0%, #3b82f6 100%);
+  border-radius: 10px;
+  border: 2px solid #020617;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa; 
+}
+
+/* --- 4. ANIMATIONS --- */
+
+/* "Ocean Breathe" - Subtle background movement */
+@keyframes oceanShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-ocean-bg {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #172554, #0f172a);
+  background-size: 400% 400%;
+  animation: oceanShimmer 15s ease infinite;
+}
+
+/* "Float" - For your Floating Action Button */
+@keyframes float {
+  0% { transform: translateY(0px); box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); }
+  50% { transform: translateY(-10px); box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); }
+  100% { transform: translateY(0px); box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); }
+}
+
+.floating-btn {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* "Fade Up" - For smooth modal entry */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.fade-in-up {
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- 5. UTILITY CLASSES (Coastal) --- */
+
+/* Frosted Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Selection Color (Water Blue) */
+::selection {
+  background: rgba(59, 130, 246, 0.5); /* Blue-500 */
+  color: white;
+}

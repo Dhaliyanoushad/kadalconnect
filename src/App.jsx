@@ -10,6 +10,7 @@ import Marketplace from "./pages/Marketplace";
 import Chatbot from "./pages/Chatbot";
 import Booking from "./pages/Booking";
 import Activities from "./pages/Activities";
+import FloatingCalendar from "./components/FloatingCalendar";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
               <Hero />
               <AboutSection />
               <Testimonials />
+              <FloatingCalendar />
+
             </>
           }
         />
