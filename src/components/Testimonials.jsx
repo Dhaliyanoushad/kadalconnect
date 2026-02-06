@@ -18,14 +18,14 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-[#F5F1E8] py-20">
-      <div className="max-w-6xl mx-auto px-6 text-white">
+    <section className="bg-[#548C92] py-20">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Voices from the Coast
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 text-[#F5F1E8]">
+          Voice of the Coast
         </h2>
 
-        <p className="text-center text-gray-300 max-w-2xl mx-auto mb-12">
+        <p className="text-center text-[#B4D7D8] max-w-2xl mx-auto mb-16 text-lg">
           Stories from local communities and travelers who believe in preserving
           coastal traditions by making them valuable.
         </p>

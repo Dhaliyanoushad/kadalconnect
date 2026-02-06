@@ -16,8 +16,8 @@ const Hero = () => {
         />
       </video>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/30 z-10"></div>
+      {/* Light Black Overlay */}
+      <div className="absolute inset-0 bg-black/40 z-10"></div>
 
       {/* Bottom Gradient Fade (KEY PART) */}
       <div className="absolute bottom-0 left-0 w-full h-64 z-20 bg-gradient-to-b from-transparent to-[#F5F1E8]" />
@@ -32,7 +32,7 @@ const Hero = () => {
           Turn Your Dreams Into Reality With Us
         </p>
 
-        <button className="px-10 py-3 rounded-full bg-[#E5D3B3] text-black font-semibold hover:bg-white transition-all transform hover:scale-105 duration-300">
+        <button className="px-10 py-3 rounded-full bg-[#AB9072] text-white font-semibold hover:bg-[#B4D7D8] hover:text-[#285260] transition-all transform hover:scale-105 duration-300">
           Join Now
         </button>
       </div>
