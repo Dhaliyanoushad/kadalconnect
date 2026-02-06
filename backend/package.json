@@ -1,0 +1,27 @@
+{
+  "name": "coastal-chatbot-backend",
+  "version": "1.0.0",
+  "description": "Context-aware chatbot for coastal sustainability platform",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "chatbot",
+    "coastal",
+    "sustainability",
+    "hackathon"
+  ],
+  "author": "Your Team Name",
+  "license": "MIT",
+  "dependencies": {
+    "@huggingface/inference": "^4.13.11",
+    "axios": "^1.13.4",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^4.22.1",
+    "uuid": "^9.0.1"
+  }
+}
