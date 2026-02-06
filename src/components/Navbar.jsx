@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
-      <div className="max-w-7xl mx-auto px-10 py-8 flex items-center justify-between text-white">
+      <div className="max-w-7xl mx-[100px] px-10 py-8 flex items-center justify-between text-white">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer group">
           <div className="w-10 h-10 bg-[#B4D7D8] text-[#285260] flex items-center justify-center rounded-lg shadow-lg group-hover:scale-110 transition-transform">
