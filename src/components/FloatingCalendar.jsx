@@ -9,7 +9,7 @@ function FloatingCalendar() {
   return (
     <>
       {/* FLOATING CALENDAR BUTTON */}
-      <div className="fixed bottom-8 right-8 z-50">
+      <div className="fixed bottom-8 left-8 z-50">
         <button
           onClick={() => setShowCalendar(!showCalendar)}
           className="floating-btn group relative flex items-center justify-center h-16 w-16 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl shadow-2xl shadow-blue-900/50 transition-all hover:scale-105 active:scale-95 border border-white/20"
