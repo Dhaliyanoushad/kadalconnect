@@ -11,6 +11,7 @@ import Chatbot from "./pages/Chatbot";
 import Booking from "./pages/Booking";
 import Activities from "./pages/Activities";
 import FloatingCalendar from "./components/FloatingCalendar";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/activities" element={<Activities />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
 
       <Footer />
