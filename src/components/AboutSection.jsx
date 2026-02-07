@@ -1,7 +1,7 @@
 
 const AboutSection = () => {
   return (
-    <section className="relative bg-[#F5F1E8] pt-24 pb-20">
+    <section className="relative bg-[var(--earth-silver)] pt-24 pb-20">
       
       {/* Wave SVG */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
@@ -13,7 +13,7 @@ const AboutSection = () => {
         >
           <path
             d="M0,64 C240,96 480,32 720,32 960,32 1200,96 1440,64 L1440,0 L0,0 Z"
-            fill="#F5F1E8"
+            fill="var(--earth-silver)"
           />
         </svg>
       </div>
@@ -39,28 +39,28 @@ const AboutSection = () => {
           </div>
           {/* Right Side: Content */}
           <div className="text-left space-y-6">
-            <span className="text-gray-600 font-medium tracking-widest uppercase text-sm">
+            <span className="text-[var(--earth-slate)] opacity-60 font-medium tracking-widest uppercase text-sm">
               About
             </span>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#7FB3C2] leading-tight uppercase">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--earth-slate)] leading-tight uppercase">
               From Coast to Community, <br />
-              <span className="text-[#6DA5B4]">Kadal Connects it all</span>
+              <span className="text-[var(--earth-copper)]">Kadal Connects it all</span>
             </h2>
 
             <div className="space-y-4 max-w-lg">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-[var(--earth-slate)]/80 leading-relaxed font-medium">
                 Kadal Connect is a digital bridge between coastal communities and the world beyond. 
                 Rooted in tradition and powered by modern technology, we help preserve coastal 
                 culture while creating sustainable opportunities for people who live by the sea.
               </p>
-              <p className="text-gray-700 leading-relaxed font-semibold">
+              <p className="text-[var(--earth-slate)]/90 leading-relaxed font-bold">
                 We believe progress doesn’t mean erasing heritage. It means strengthening it — 
                 responsibly, transparently, and together.
               </p>
             </div>
 
-            <button className="mt-4 px-8 py-3 bg-[#7FB3C2] text-white rounded-full font-medium hover:bg-[#6DA5B4] transition-colors shadow-lg">
+            <button className="mt-4 px-8 py-3 bg-[var(--earth-copper)] text-white rounded-full font-medium hover:bg-[var(--earth-moss)] transition-colors shadow-lg">
               Learn more
             </button>
           </div>

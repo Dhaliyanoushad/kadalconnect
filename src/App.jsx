@@ -12,6 +12,7 @@ import Chatbot from "./pages/Chatbot";
 import Booking from "./pages/Booking";
 import Activities from "./pages/Activities";
 import FloatingCalendar from "./components/FloatingCalendar";
+import SeasonalPromotions from "./components/SeasonalPromotions";
 import Test from "./pages/Test";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Hero />
               <AboutSection />
               <Testimonials />
+              <SeasonalPromotions />
               <FloatingCalendar />
 
             </>

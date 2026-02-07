@@ -231,7 +231,7 @@ const CoastalCalendarWidget = () => {
          }}>
       
       {/* Glassmorphism Overlay */}
-      <div className="absolute inset-0 bg-[var(--deep-sea)]/60 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-[var(--earth-slate)]/60 backdrop-blur-sm"></div>
 
       <div className="relative z-10 p-6 h-full flex flex-col text-white">
         
@@ -241,10 +241,10 @@ const CoastalCalendarWidget = () => {
           <div className="flex justify-between items-center mt-2">
             <div>
                 <div className="flex items-center gap-2 text-white">
-                    <Sun size={18} className="text-[var(--sand-gold)]" />
-                    <span className="text-lg uppercase tracking-widest font-bold">{data.name}</span>
+                    <Sun size={18} className="text-[var(--earth-copper)]" />
+                    <span className="text-lg uppercase tracking-widest font-bold text-[var(--earth-silver)]">{data.name}</span>
                 </div>
-                <p className="text-xs text-[var(--foam-white)] mt-1 italic opacity-80">{data.weatherNote}</p>
+                <p className="text-xs text-[var(--earth-silver)]/80 mt-1 italic">{data.weatherNote}</p>
             </div>
             
             {/* Month Navigation Buttons */}
@@ -278,7 +278,7 @@ const CoastalCalendarWidget = () => {
               return (
                 <div key={d.day} 
                      onClick={() => hasFestivals && setSelectedDate(d)}
-                     className={`flex items-center justify-center p-1 rounded-lg transition-all ${hasFestivals ? 'ring-2 ring-[var(--sand-gold)] cursor-pointer hover:ring-white bg-[var(--sand-gold)]/20' : 'cursor-default'}`}>
+                     className={`flex items-center justify-center p-1 rounded-lg transition-all ${hasFestivals ? 'ring-2 ring-[var(--earth-copper)] cursor-pointer hover:ring-white bg-[var(--earth-copper)]/20' : 'cursor-default'}`}>
                   <span className="text-sm font-medium">{d.day}</span>
                 </div>
               );
@@ -294,22 +294,22 @@ const CoastalCalendarWidget = () => {
           <div className="space-y-4 overflow-y-auto max-h-40 pr-2 scrollbar-hide">
             {data.festivals.length > 0 ? (
               data.festivals.map((fest, idx) => (
-                <div key={idx} className="flex gap-3 items-start border-l-2 border-[var(--sand-gold)] pl-3 relative group">
+                <div key={idx} className="flex gap-3 items-start border-l-2 border-[var(--earth-copper)] pl-3 relative group">
                   <div className="text-center min-w-[30px]">
-                    <span className="block text-[10px] font-bold text-[var(--shallow-teal)] uppercase">{data.name.substring(0,3)}</span>
+                    <span className="block text-[10px] font-bold text-[var(--earth-silver)]/60 uppercase">{data.name.substring(0,3)}</span>
                     <span className="block text-lg font-bold leading-none text-white">{fest.date}</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-start">
                       <h4 className="text-sm font-semibold text-white leading-tight">{fest.name}</h4>
                     </div>
-                    <span className="text-[10px] bg-[var(--sand-gold)]/30 px-1.5 rounded text-[var(--sand-gold)] inline-block mb-1 mt-1">
+                    <span className="text-[10px] bg-[var(--earth-copper)]/30 px-1.5 rounded text-[var(--earth-copper)] inline-block mb-1 mt-1 font-bold">
                         {fest.type}
                     </span>
                     <p className="text-xs text-white/70">{fest.desc}</p>
                     
                     {fest.action && (
-                      <button className="mt-2 text-[10px] bg-[var(--sand-gold)] hover:bg-[#d97706] text-[var(--deep-sea)] px-2 py-1 rounded shadow transition-colors w-full font-bold tracking-wide">
+                      <button className="mt-2 text-[10px] bg-[var(--earth-copper)] hover:bg-[var(--earth-moss)] text-white px-2 py-1 rounded shadow transition-colors w-full font-bold tracking-wide">
                         🎟️ {fest.action}
                       </button>
                     )}
@@ -334,7 +334,7 @@ const CoastalCalendarWidget = () => {
           ></div>
           
           {/* Popup Card */}
-          <div className="relative z-10 bg-gradient-to-br from-[var(--deep-sea)]/95 to-[#1e293b]/95 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl max-w-sm w-full p-6 max-h-[80vh] overflow-y-auto min-h-[300px]">
+          <div className="relative z-10 bg-[var(--earth-slate)]/95 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl max-w-sm w-full p-6 max-h-[80vh] overflow-y-auto min-h-[300px]">
             {/* Close Button */}
             <button 
               onClick={() => setSelectedDate(null)}
@@ -356,13 +356,13 @@ const CoastalCalendarWidget = () => {
                   <div key={idx} className="bg-white/10 rounded-lg p-4 border border-white/20">
                     <h3 className="text-lg font-bold text-white mb-2">{fest.name}</h3>
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs bg-[var(--sand-gold)]/30 px-2.5 py-1 rounded text-[var(--sand-gold)] font-medium">
+                      <span className="text-xs bg-[var(--earth-copper)]/30 px-2.5 py-1 rounded text-[var(--earth-copper)] font-bold">
                         {fest.type}
                       </span>
                     </div>
                     <p className="text-sm text-white/80 leading-relaxed mb-3">{fest.desc}</p>
                     {fest.action && (
-                      <button className="w-full text-sm bg-[var(--sand-gold)] hover:bg-[#d97706] text-[var(--deep-sea)] px-4 py-2 rounded-lg font-bold transition-colors">
+                      <button className="w-full text-sm bg-[var(--earth-copper)] hover:bg-[var(--earth-moss)] text-white px-4 py-2 rounded-lg font-bold transition-colors">
                         🎟️ {fest.action}
                       </button>
                     )}

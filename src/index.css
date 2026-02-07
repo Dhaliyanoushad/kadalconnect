@@ -1,1 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
 @import "tailwindcss";
+
+/* --- 1. FONTS & COLOR THEME (Earthy Coastal) --- */
+
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  
+  /* Earthy Coastal Palette */
+  --color-earth-slate: #384F46;
+  --color-earth-granite: #4A5F4D;
+  --color-earth-moss: #536859;
+  --color-earth-silver: #C7BFB9;
+  --color-earth-copper: #A3825D;
+}
+
+:root {
+  --earth-slate: #384F46;
+  --earth-granite: #4A5F4D;
+  --earth-moss: #536859;
+  --earth-silver: #C7BFB9;
+  --earth-copper: #A3825D;
+  
+  --glass-border: rgba(56, 79, 70, 0.1); /* Based on earth-slate opacity */
+}
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--earth-silver); /* Light neutral background */
+    color: var(--earth-slate); /* High contrast earthy text */
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .serif-font {
+    font-family: 'Playfair Display', serif;
+    color: var(--earth-slate);
+    letter-spacing: -0.01em;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--earth-silver);
+    border-left: 1px solid var(--glass-border);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--earth-granite);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--earth-copper);
+  }
+
+  ::selection {
+    background: var(--earth-moss);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .animate-earth-shimmer {
+    background: linear-gradient(-45deg, var(--earth-silver), var(--earth-granite), var(--earth-slate), var(--earth-silver));
+    background-size: 400% 400%;
+    animation: earthShimmer 15s ease infinite;
+  }
+
+  .floating-btn {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .fade-in-up {
+    animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .earth-card {
+    background: rgba(255, 255, 255, 0.15); /* Subtly bright on the silver background */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 20px rgba(56, 79, 70, 0.05);
+  }
+}
+
+/* --- 2. ANIMATIONS --- */
+@keyframes earthShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); box-shadow: 0 5px 15px 0px rgba(56,79,70,0.1); }
+  50% { transform: translateY(-10px); box-shadow: 0 15px 15px 0px rgba(56,79,70,0.05); }
+  100% { transform: translateY(0px); box-shadow: 0 5px 15px 0px rgba(56,79,70,0.1); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

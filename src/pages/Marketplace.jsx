@@ -73,15 +73,15 @@ function Marketplace() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F1E8] pt-40 pb-24">
+    <div className="min-h-screen bg-[var(--earth-silver)] pt-40 pb-24 text-[var(--earth-slate)]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
         <div className="mb-16">
-          <span className="text-sm font-bold uppercase tracking-[0.4em] text-[#548C92]/60 mb-4 block text-center md:text-left">
+          <span className="text-sm font-bold uppercase tracking-[0.4em] text-[var(--earth-slate)]/40 mb-4 block text-center md:text-left">
             The Exchange
           </span>
-          <h1 className="text-5xl md:text-8xl font-black text-[#548C92] uppercase tracking-tighter leading-none text-center md:text-left">
-            COASTAL <br /> <span className="text-[#AB9072]">MARKETPLACE</span>
+          <h1 className="text-5xl md:text-8xl font-black text-[var(--earth-slate)] uppercase tracking-tighter leading-none text-center md:text-left">
+            COASTAL <br /> <span className="text-[var(--earth-copper)]">MARKETPLACE</span>
           </h1>
         </div>
 
@@ -93,8 +93,8 @@ function Marketplace() {
               onClick={() => setActiveCategory(filter)}
               className={`px-8 py-3 rounded-full font-bold text-sm transition-all shadow-lg active:scale-95 flex items-center gap-2 ${
                 activeCategory === filter 
-                ? "bg-[#285260] text-white" 
-                : "bg-white text-[#285260] hover:bg-[#B4D7D8]"
+                ? "bg-[var(--earth-slate)] text-white" 
+                : "bg-white/40 text-[var(--earth-slate)] hover:bg-[var(--earth-copper)] hover:text-white"
               }`}
             >
               {filter}
@@ -105,26 +105,26 @@ function Marketplace() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="group relative bg-white rounded-[40px] overflow-hidden shadow-2xl border border-[#AB9072]/10 transition-all duration-500 hover:-translate-y-3">
+            <div key={product.id} className="group relative bg-white/40 backdrop-blur-md rounded-[40px] overflow-hidden shadow-2xl border border-[var(--earth-slate)]/5 transition-all duration-500 hover:-translate-y-3">
               <div className="aspect-[4/5] overflow-hidden relative">
                 <img src={product.img} alt={product.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute top-6 left-6">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#F5F1E8] bg-[#285260]/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 flex items-center gap-1">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[var(--earth-silver)] bg-[var(--earth-slate)]/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 flex items-center gap-1">
                     {product.category}
                   </span>
                 </div>
               </div>
-              <div className="p-8 bg-white relative">
+              <div className="p-8 relative">
                 <div className="flex justify-between items-end mb-6">
-                  <h3 className="text-2xl font-black text-[#285260] uppercase tracking-tight leading-tight max-w-[70%]">
+                  <h3 className="text-2xl font-black text-[var(--earth-slate)] uppercase tracking-tight leading-tight max-w-[70%]">
                     {product.title}
                   </h3>
-                  <span className="text-2xl font-black text-[#548C92]">₹{product.price}</span>
+                  <span className="text-2xl font-black text-[var(--earth-copper)]">₹{product.price}</span>
                 </div>
                 
                 <button 
                   onClick={() => openModal(product)}
-                  className="w-full py-4 bg-[#7fb3c8] text-white rounded-2xl font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-[#285260] transition-colors shadow-lg active:scale-95"
+                  className="w-full py-4 bg-[var(--earth-copper)] text-white rounded-2xl font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-[var(--earth-slate)] transition-colors shadow-lg active:scale-95"
                 >
                   Buy Now
                 </button>
@@ -137,19 +137,19 @@ function Marketplace() {
       {/* DETAILED BUY MODAL */}
       {selectedProduct && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-[#285260]/60 backdrop-blur-md" onClick={closeModal} />
+          <div className="absolute inset-0 bg-[var(--earth-slate)]/60 backdrop-blur-md" onClick={closeModal} />
           
-          <div className="relative z-10 w-full max-w-lg bg-white rounded-[40px] border border-[#AB9072]/20 shadow-3xl overflow-hidden fade-in-up text-[#285260]">
+          <div className="relative z-10 w-full max-w-lg bg-[var(--earth-silver)] rounded-[40px] border border-[var(--earth-slate)]/10 shadow-3xl overflow-hidden fade-in-up text-[var(--earth-slate)]">
             <div className="p-8">
               {/* Modal Header */}
               <div className="flex justify-between items-start mb-8">
                 <div>
                   <h2 className="text-3xl font-black uppercase tracking-tighter">Checkout</h2>
-                  <p className="text-[#548C92] font-bold text-xs uppercase tracking-widest mt-1">
+                  <p className="text-[var(--earth-copper)] font-bold text-xs uppercase tracking-widest mt-1">
                     {selectedProduct.title}
                   </p>
                 </div>
-                <button onClick={closeModal} className="p-2 hover:bg-[#F5F1E8] rounded-full text-[#548C92]/50 hover:text-[#285260] transition-all">
+                <button onClick={closeModal} className="p-2 hover:bg-[var(--earth-slate)]/5 rounded-full text-[var(--earth-slate)]/30 hover:text-[var(--earth-slate)] transition-all">
                   <X size={24} />
                 </button>
               </div>
@@ -157,11 +157,11 @@ function Marketplace() {
               {/* Form Content */}
               <div className="space-y-6">
                 {/* Product Summary Mini */}
-                <div className="flex items-center gap-4 p-4 bg-[#F5F1E8] rounded-2xl border border-[#AB9072]/10 mb-2">
-                  <img src={selectedProduct.img} alt="" className="w-16 h-16 object-cover rounded-xl" />
+                <div className="flex items-center gap-4 p-4 bg-[var(--earth-slate)]/5 rounded-2xl border border-[var(--earth-slate)]/5 mb-2">
+                  <img src={selectedProduct.img} alt="" className="w-16 h-16 object-cover rounded-xl shadow-lg" />
                   <div>
                     <p className="text-sm font-bold opacity-70">Price per unit</p>
-                    <p className="text-xl font-black text-[#AB9072]">₹{selectedProduct.price}</p>
+                    <p className="text-xl font-black text-[var(--earth-copper)]">₹{selectedProduct.price}</p>
                   </div>
                 </div>
 
@@ -174,7 +174,7 @@ function Marketplace() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="e.g. Rahul Sharma"
-                      className="w-full bg-[#F5F1E8] border border-[#AB9072]/20 rounded-2xl px-5 py-4 text-[#285260] focus:outline-none focus:border-[#548C92] transition-colors placeholder:text-[#285260]/30"
+                      className="w-full bg-[var(--earth-slate)]/5 border border-[var(--earth-slate)]/10 rounded-2xl px-5 py-4 text-[var(--earth-slate)] focus:outline-none focus:border-[var(--earth-copper)] transition-colors placeholder:text-[var(--earth-slate)]/30"
                     />
                   </div>
 
@@ -186,7 +186,7 @@ function Marketplace() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="e.g. +91 98765 43210"
-                      className="w-full bg-[#F5F1E8] border border-[#AB9072]/20 rounded-2xl px-5 py-4 text-[#285260] focus:outline-none focus:border-[#548C92] transition-colors placeholder:text-[#285260]/30"
+                      className="w-full bg-[var(--earth-slate)]/5 border border-[var(--earth-slate)]/10 rounded-2xl px-5 py-4 text-[var(--earth-slate)] focus:outline-none focus:border-[var(--earth-copper)] transition-colors placeholder:text-[var(--earth-slate)]/30"
                     />
                   </div>
 
@@ -198,7 +198,7 @@ function Marketplace() {
                       onChange={handleInputChange}
                       placeholder="Enter your complete address..."
                       rows="3"
-                      className="w-full bg-[#F5F1E8] border border-[#AB9072]/20 rounded-2xl px-5 py-4 text-[#285260] focus:outline-none focus:border-[#548C92] transition-colors placeholder:text-[#285260]/30 resize-none"
+                      className="w-full bg-[var(--earth-slate)]/5 border border-[var(--earth-slate)]/10 rounded-2xl px-5 py-4 text-[var(--earth-slate)] focus:outline-none focus:border-[var(--earth-copper)] transition-colors placeholder:text-[var(--earth-slate)]/30 resize-none"
                     />
                   </div>
 
@@ -206,20 +206,20 @@ function Marketplace() {
                   <div className="flex gap-4">
                     <div className="flex-1">
                       <label className="block text-[10px] font-bold opacity-50 uppercase tracking-widest mb-2 ml-1">Quantity</label>
-                      <div className="flex items-center justify-between bg-[#F5F1E8] border border-[#AB9072]/20 rounded-2xl px-4 py-3">
-                        <button onClick={() => adjustQuantity(-1)} className="p-1 hover:bg-white rounded-lg text-[#285260] transition-colors">
+                      <div className="flex items-center justify-between bg-[var(--earth-slate)]/5 border border-[var(--earth-slate)]/10 rounded-2xl px-4 py-3 text-[var(--earth-slate)]">
+                        <button onClick={() => adjustQuantity(-1)} className="p-1 hover:bg-white rounded-lg transition-colors">
                           <Minus size={18} />
                         </button>
                         <span className="text-lg font-bold">{formData.quantity}</span>
-                        <button onClick={() => adjustQuantity(1)} className="p-1 hover:bg-white rounded-lg text-[#285260] transition-colors">
+                        <button onClick={() => adjustQuantity(1)} className="p-1 hover:bg-white rounded-lg transition-colors">
                           <Plus size={18} />
                         </button>
                       </div>
                     </div>
                     <div className="flex-1">
                       <label className="block text-[10px] font-bold opacity-50 uppercase tracking-widest mb-2 ml-1">Total Amount</label>
-                      <div className="bg-[#F5F1E8] border border-[#AB9072]/20 rounded-2xl px-4 py-3 flex items-center justify-center">
-                        <span className="text-xl font-black text-[#285260]">₹{selectedProduct.price * formData.quantity}</span>
+                      <div className="bg-[var(--earth-slate)]/5 border border-[var(--earth-slate)]/10 rounded-2xl px-4 py-3 flex items-center justify-center">
+                        <span className="text-xl font-black text-[var(--earth-slate)]">₹{selectedProduct.price * formData.quantity}</span>
                       </div>
                     </div>
                   </div>
@@ -227,7 +227,7 @@ function Marketplace() {
 
                 {/* Submit Button */}
                 <button 
-                  className="w-full py-6 mt-4 bg-[#AB9072] text-white rounded-3xl font-black uppercase text-sm tracking-[0.2em] hover:bg-[#8e7256] transition-all shadow-xl active:scale-95 flex items-center justify-center gap-3 group"
+                  className="w-full py-6 mt-4 bg-[var(--earth-copper)] text-white rounded-3xl font-black uppercase text-sm tracking-[0.2em] hover:bg-[var(--earth-moss)] transition-all shadow-xl active:scale-95 flex items-center justify-center gap-3 group shadow-[var(--earth-copper)]/20"
                 >
                   <CreditCard size={20} className="group-hover:translate-x-1 transition-transform" />
                   Proceed to Payment
