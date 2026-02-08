@@ -29,7 +29,7 @@ export default function ChatbotWidget() {
     setError(null);
 
     try {
-      const res = await fetch("http://localhost:5001/chat", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text }),
@@ -45,7 +45,10 @@ export default function ChatbotWidget() {
       setMessages((m) => [...m, { from: "bot", text: reply }]);
     } catch (err) {
       setError(err.message || "Network error");
-      setMessages((m) => [...m, { from: "system", text: "Failed to get response from server." }]);
+      setMessages((m) => [
+        ...m,
+        { from: "system", text: "Failed to get response from server." },
+      ]);
     } finally {
       setLoading(false);
     }
@@ -68,7 +71,9 @@ export default function ChatbotWidget() {
         }`}
       >
         <div className="p-3 px-[14px] bg-gradient-to-r from-[var(--earth-silver)] to-white flex items-center justify-between border-b border-[var(--earth-slate)]/10">
-          <div className="font-black uppercase tracking-widest text-xs text-[var(--earth-slate)]">KadalConnect Chat</div>
+          <div className="font-black uppercase tracking-widest text-xs text-[var(--earth-slate)]">
+            KadalConnect Chat
+          </div>
           <button
             className="bg-transparent border-none text-[var(--earth-slate)]/30 hover:text-[var(--earth-slate)] cursor-pointer p-1"
             onClick={toggleOpen}
@@ -95,8 +100,8 @@ export default function ChatbotWidget() {
                 m.from === "user"
                   ? "self-end bg-[var(--earth-copper)] text-white rounded-[12px_12px_6px_12px] shadow-lg shadow-[var(--earth-copper)]/10"
                   : m.from === "bot"
-                  ? "self-start bg-[var(--earth-slate)]/5 text-[var(--earth-slate)] rounded-[12px_12px_12px_6px]"
-                  : "self-center bg-transparent text-[#ef4444] text-[13px]"
+                    ? "self-start bg-[var(--earth-slate)]/5 text-[var(--earth-slate)] rounded-[12px_12px_12px_6px]"
+                    : "self-center bg-transparent text-[#ef4444] text-[13px]"
               }`}
             >
               <div className="whitespace-pre-wrap break-words">{m.text}</div>
@@ -105,11 +110,15 @@ export default function ChatbotWidget() {
 
           {loading && (
             <div className="max-w-[82%] inline-flex self-start bg-[var(--earth-slate)]/5 text-[var(--earth-slate)] p-[10px_12px] rounded-[12px_12px_12px_6px] text-sm">
-              <div className="whitespace-pre-wrap break-words italic opacity-50">Typing…</div>
+              <div className="whitespace-pre-wrap break-words italic opacity-50">
+                Typing…
+              </div>
             </div>
           )}
 
-          {error && <div className="text-[#b91c1c] text-[13px]">Error: {error}</div>}
+          {error && (
+            <div className="text-[#b91c1c] text-[13px]">Error: {error}</div>
+          )}
         </div>
 
         <form
